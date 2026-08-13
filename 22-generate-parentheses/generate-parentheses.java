@@ -11,11 +11,7 @@ class Solution {
         return result;
     }
 
-    private void backtrack(List<String> result,
-                           String current,
-                           int open,
-                           int close,
-                           int n) {
+    private void backtrack(List<String> result,String current,int open,int close,int n) {
 
         if (current.length() == 2 * n) {
             result.add(current);
@@ -23,19 +19,11 @@ class Solution {
         }
 
         if (open < n) {
-            backtrack(result,
-                      current + "(",
-                      open + 1,
-                      close,
-                      n);
+            backtrack(result,current + "(",open + 1,close,n);
         }
 
         if (close < open) {
-            backtrack(result,
-                      current + ")",
-                      open,
-                      close + 1,
-                      n);
+            backtrack(result,current + ")",open,close + 1,n);
         }
     }
 }
